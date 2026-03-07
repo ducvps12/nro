@@ -1,0 +1,1205 @@
+html {
+    transition: all 0.3s ease; /* Thiết lập hiệu ứng chuyển tiếp cho tất cả các thuộc tính CSS của thẻ html */
+}
+
+.wrapper-content {
+    overflow: hidden; /* Ẩn các phần tử vượt ra ngoài phần tử cha .wrapper-content */
+}
+
+.footer-wrapper {
+    display: flex; /* Sử dụng Flexbox để căn giữa nội dung */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+}
+
+.top-nav {
+    display: flex; /* Sử dụng Flexbox để tạo khoảng cách giữa các phần tử */
+    justify-content: space-between; /* Tạo khoảng cách đều giữa các phần tử con */
+}
+
+.top-btn {
+    background-color: #194b45; /* Màu nền xám đậm */
+    color: #ffffff !important; /* Màu chữ trắng */
+    margin: 12px 8px; /* Khoảng cách ngoài */
+    font-weight: 800; /* Đậm chữ */
+    font-size: 14px; /* Kích thước chữ */
+    text-align: center; /* Căn giữa nội dung */
+    line-height: 30px; /* Chiều cao dòng */
+    transition: all 0.3s ease; /* Thêm hiệu ứng chuyển tiếp khi thay đổi trạng thái */
+    padding: 8px 12px; /* Khoảng cách trong */
+    border-radius: 8px; /* Bo tròn các góc */
+    text-decoration: none; /* Không có gạch chân */
+}
+
+
+.top-btn:hover, 
+.top-btn:focus {
+    color: #ffffff !important; /* Màu chữ trắng khi hover/focus */
+    background-color: #000000; /* Màu nền đen khi hover/focus */
+}
+
+.intro {
+    display: flex; /* Sử dụng Flexbox */
+    flex-direction: column; /* Sắp xếp theo chiều dọc */
+    justify-content: space-between; /* Khoảng cách đều giữa các phần tử */
+    margin: 40px 0; /* Lề trên và dưới là 40px */
+}
+
+.footer-left, .footer-right {
+    width: 100%; /* Chiều rộng 100% */
+    height: 80px; /* Chiều cao 80px */
+    display: flex; /* Sử dụng Flexbox */
+    flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+    justify-content: space-between; /* Khoảng cách đều giữa các phần tử */
+}
+
+.social-icon:hover {
+    opacity: 0.7; /* Giảm độ mờ khi hover */
+    transition: all 0.3s ease; /* Thêm hiệu ứng chuyển tiếp */
+    cursor: pointer; /* Thay đổi con trỏ thành hình tay */
+}
+.terms {
+    display: flex; /* Sử dụng Flexbox */
+    text-align: center; /* Căn giữa văn bản */
+    justify-content: center; /* Căn giữa nội dung */
+    padding-top: 40px; /* Khoảng cách trên là 40px */
+}
+
+.content-terms {
+    width: 80%; /* Chiều rộng 80% */
+    font-size: 12px; /* Kích thước chữ là 12px */
+}
+
+.girlkun-bg {
+    
+    background: #cac8c8   url(/img/back2.png); /* Màu nền xám */
+    background-size: cover; /* Phủ kín phần tử */
+    background-attachment: fixed; /* Nền cố định khi cuộn trang */
+    background-position: center center; /* Căn giữa nền */
+}
+
+.partner {
+    text-decoration: none; /* Không có gạch chân */
+    font-size: 18px; /* Kích thước chữ 18px */
+    color: #000000; /* Màu chữ đen */
+    font-weight: 600; /* Font-weight 600 */
+}
+
+.partner:hover {
+    cursor: pointer; /* Thay đổi con trỏ thành tay khi hover */
+    color: white; /* Màu chữ trắng khi hover */
+}
+/* Màu nền */
+.wrapper-site { 
+    border-radius:12px; /* Bo tròn góc */
+    background-color:#a30a2b60; /* Màu nền xanh lục */
+}
+
+.modal-header {
+    background-color:#ecd23ca6 !important; /* Màu nền kem cho phần đầu modal */
+    padding: 50px 0; /* Khoảng cách padding trên dưới là 50px */
+}
+
+.header-site {
+    background-color: #eedc78a6; /* Màu nền kem */
+    padding-bottom:5px; /* Khoảng cách dưới là 5px */
+    padding-top: 5px; /* Khoảng cách trên là 5px */
+}
+
+.modal-footer {
+    border-top: 0px; /* Bỏ đường viền trên của modal footer */
+}
+
+.user_name {
+    margin: 36px 0; /* Khoảng cách lề trên và dưới là 36px */
+}
+
+.footer-site {
+    margin-top: 24px !important; /* Khoảng cách lề trên là 24px */
+    background-color: #ebdc8796; /* Màu nền kem */
+    padding-bottom:5px; /* Khoảng cách dưới là 5px */
+    padding-top: 5px; /* Khoảng cách trên là 5px */
+    border-radius: 12px; /* Bo tròn góc */
+    margin-top: 12px; /* Khoảng cách trên là 12px */
+    color: black !important; /* Màu chữ đen */
+}
+
+.avatar {
+    background: #b3afaf url(./images/logo/logo.png); /* Nền xám và hình ảnh logo */
+    background-size: cover; /* Phủ toàn bộ phần tử */
+    padding: 2px; /* Khoảng cách trong là 2px */
+    border-radius: 15%; /* Bo tròn góc 15% */
+    border: rgb(255, 0, 119) 1px solid; /* Đường viền màu hồng */
+}
+
+.btn-border {
+    border-radius: 20% !important; /* Bo tròn góc nút */
+}
+
+/* Ghim bài */
+.btn-ghimbai {
+    color: #FFF; /* Màu chữ trắng */
+    background-color: #0ac2f5 !important; /* Màu nền xanh lam */
+    border-color: #046c89 !important; /* Màu viền xanh đậm */
+}
+
+.btn-info {
+    color: #fff; /* Màu chữ trắng */
+    background-color: #88c33d !important; /* Màu nền xanh lá */
+    border-color: #6b9733 !important; /* Màu viền xanh lá đậm */
+}
+
+.btn-info:hover {
+    color: #fff; /* Màu chữ trắng khi hover */
+    background-color: #6b9733 !important; /* Màu nền xanh lá đậm khi hover */
+    border-color: #7ea949 !important; /* Màu viền khi hover */
+}
+
+.btn-primary {
+    color: #fff; /* Màu chữ trắng */
+    background-color: #8f34f5 !important; /* Màu nền tím */
+    border-color: #6518bb !important; /* Màu viền tím đậm */
+}
+
+.page-heading {
+    border-top: 0; /* Bỏ đường viền trên */
+    padding: 0 10px 20px 10px; /* Khoảng cách padding */
+}
+
+.forum-post-container .media {
+    margin: 10px 10px 10px 10px; /* Khoảng cách ngoài của media */
+    padding: 20px 10px 20px 10px; /* Khoảng cách trong */
+    border-bottom: 1px solid #f1f1f1; /* Đường viền dưới màu xám nhạt */
+}
+
+.forum-avatar {
+    float: left; /* Căn trái */
+    margin-right: 20px; /* Khoảng cách bên phải 20px */
+    text-align: center; /* Căn giữa nội dung */
+    width: 110px; /* Chiều rộng 110px */
+}
+
+.forum-avatar .img-circle {
+    height: 48px; /* Chiều cao hình avatar */
+    width: 48px; /* Chiều rộng hình avatar */
+}
+
+.author-info {
+    color: #676a6c; /* Màu chữ xám */
+    font-size: 11px; /* Kích thước chữ 11px */
+    margin-top: 5px; /* Khoảng cách trên 5px */
+    text-align: center; /* Căn giữa nội dung */
+}
+
+.forum-post-info {
+    padding: 9px 12px 6px 12px; /* Khoảng cách padding */
+    background: #f9f9f9; /* Màu nền xám sáng */
+    border: 1px solid #f1f1f1; /* Đường viền xám nhạt */
+}
+
+.media-body>.media {
+    background: #f9f9f9; /* Nền xám sáng */
+    border-radius: 3px; /* Bo tròn góc */
+    border: 1px solid #f1f1f1; /* Đường viền xám nhạt */
+}
+
+.forum-post-container .media-body .photos {
+    margin: 10px 0; /* Khoảng cách trên/dưới là 10px */
+}
+
+.forum-photo {
+    max-width: 140px; /* Chiều rộng tối đa là 140px */
+    height: 100px; /* Chiều cao 100px */
+}
+
+/* Định dạng khung avatar trong phần nội dung */
+.media-body > .media .forum-avatar {
+    width: 70px; /* Đặt chiều rộng của avatar */
+    margin-right: 10px; /* Khoảng cách bên phải của avatar */
+}
+
+/* Định dạng cho ảnh avatar tròn */
+.media-body > .media .forum-avatar .img-circle {
+    height: 38px; /* Chiều cao ảnh */
+    width: 38px; /* Chiều rộng ảnh */
+}
+
+/* Kích thước biểu tượng lớn */
+.mid-icon {
+    font-size: 66px; /* Đặt kích thước font cho biểu tượng */
+}
+
+/* Định dạng cho từng mục trong diễn đàn */
+.forum-item {
+    margin: 10px 0; /* Khoảng cách trên và dưới */
+    padding: 10px 0 20px; /* Khoảng cách trên, dưới và giữa */
+    border-bottom: 1px solid #f1f1f1; /* Đường viền phía dưới */
+}
+
+/* Định dạng số lượt xem */
+.views-number {
+    font-size: 24px; /* Kích thước font */
+    line-height: 18px; /* Chiều cao dòng */
+    font-weight: 400; /* Độ đậm của font */
+}
+
+/* Khoảng cách và định dạng của container */
+.forum-container,
+.forum-post-container {
+    padding: 5px !important; /* Khoảng cách bên trong */
+}
+
+/* Định dạng màu cho phần văn bản nhỏ */
+.forum-item small {
+    color: #999; /* Màu chữ xám */
+}
+
+/* Màu và khoảng cách cho tiêu đề phụ */
+.forum-item .forum-sub-title {
+    color: #999;
+    margin-left: 50px; /* Khoảng cách bên trái */
+}
+
+/* Khoảng cách của tiêu đề chính */
+.forum-title {
+    margin: 15px 0 15px 5px;
+}
+
+/* Định dạng canh giữa cho thông tin */
+.forum-info {
+    text-align: center;
+}
+
+/* Màu chữ mô tả diễn đàn */
+.forum-desc {
+    color: #999;
+}
+
+/* Định dạng biểu tượng diễn đàn */
+.forum-icon {
+    float: left;
+    width: 30px; /* Chiều rộng biểu tượng */
+    margin-right: 20px; /* Khoảng cách bên phải */
+    text-align: center; /* Canh giữa */
+}
+
+/* Định dạng cho tiêu đề mục diễn đàn */
+a.forum-item-title {
+    color: inherit; /* Kế thừa màu sắc từ phần tử cha */
+    display: block;
+    font-size: 18px; /* Kích thước font */
+    font-weight: 600; /* Độ đậm của font */
+}
+
+/* Định dạng cho tiêu đề khi di chuột */
+a.forum-item-title:hover {
+    color: inherit;
+}
+
+/* Định dạng biểu tượng diễn đàn */
+.forum-icon .fa {
+    font-size: 30px; /* Kích thước font */
+    margin-top: 8px;
+    color: #9b9b9b; /* Màu biểu tượng */
+}
+
+.forum-item.active .fa {
+    color: #000000;
+}
+/* Định dạng khi mục diễn đàn đang hoạt động */
+.forum-item.active a.forum-item-title {
+    color: #000000;
+}
+
+/* Định dạng responsive cho màn hình dưới 992px */
+@media (max-width: 992px) {
+    .forum-info {
+        margin: 15px 0 10px 0;
+        display: none; /* Ẩn thông tin diễn đàn trên thiết bị nhỏ */
+    }
+    .forum-desc {
+        float: none !important;
+    }
+}
+
+
+
+
+
+/* Định dạng cho hộp chứa nội dung */
+.ibox {
+    clear: both;
+    margin-bottom: 25px;
+    padding: 0;
+}
+
+/* Ẩn nội dung khi hộp bị thu gọn */
+.ibox.collapsed .ibox-content {
+    display: none;
+}
+
+.ibox.collapsed .fa.fa-chevron-up:before {
+    content: "\f078";
+}
+
+.ibox.collapsed .fa.fa-chevron-down:before {
+    content: "\f077";
+}
+
+.ibox:after,
+.ibox:before {
+    display: table;
+}
+
+.table {
+    color: white !important;
+}
+
+.ibox-title {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #ffffff;
+    border-color: #e7eaec;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 3px 0 0;
+    color: inherit;
+    margin-bottom: 0;
+    padding: 14px 15px 7px;
+    min-height: 48px;
+}
+
+.ibox-content {
+    background-color: #fab45c;
+    color: rgb(0, 0, 0);
+    padding: 50px 20px 50px 20px;
+    border-color: rgb(207 149 89 / 0%);
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 0;
+    border-radius: 10px;
+    padding-bottom: 40px !important;
+}
+
+.ibox-footer {
+    color: inherit;
+    border-top: 1px solid #e7eaec;
+    font-size: 90%;
+    background: #ffffff;
+    padding: 10px 15px;
+}
+
+.message-input {
+    height: 90px !important;
+}
+
+.form-control,
+.single-line {
+    background-color: #FFFFFF;
+    background-image: none;
+    border: 1px solid #e5e6e7;
+    border-radius: 1px;
+    color: black;
+    display: block;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+    font-size: 14px;
+}
+
+.text-navy {
+    color: #1ab394;
+}
+
+.mid-icon {
+    font-size: 66px !important;
+}
+
+.m-b-sm {
+    margin-bottom: 3px;
+}
+
+
+
+.job-box-filter label {
+    width: 100%;
+}
+
+.job-box-filter select.input-sm {
+    display: inline-block;
+    max-width: 120px;
+    margin: 0 5px;
+    border: 1px solid #e8eef1;
+    border-radius: 2px;
+    height: 34px;
+    font-size: 15px;
+}
+
+.job-box-filter label input.form-control {
+    max-width: 200px;
+    display: inline-block;
+    border: 1px solid #e8eef1;
+    border-radius: 2px;
+    height: 34px;
+    margin-left: 5px;
+    font-size: 15px;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.job-box-filter {
+    padding: 12px 15px;
+    background: #ffffff;
+    border-bottom: 1px solid #e8eef1;
+    margin-bottom: 20px;
+}
+
+.job-box {
+    background: #ffffff;
+    display: inline-block;
+    width: 100%;
+    padding: 0 0px 40px 0px;
+    border: 1px solid #e8eef1;
+}
+
+.job-box-filter a.filtsec {
+    margin-top: 8px;
+    display: inline-block;
+    margin-right: 15px;
+    padding: 4px 10px;
+    font-family: 'Quicksand', sans-serif;
+    transition: all ease 0.4s;
+    background: #edf0f3;
+    border-radius: 50px;
+    font-size: 13px;
+    color: #81a0b1;
+    border: 1px solid #e2e8ef;
+}
+
+.job-box-filter a.filtsec.active {
+    color: #ffffff;
+    background: #16262c;
+    border-color: #16262c;
+}
+
+.job-box-filter a.filtsec i {
+    color: #03A9F4;
+    margin-right: 5px;
+}
+
+.job-box-filter a.filtsec:hover,
+.job-box-filter a.filtsec:focus {
+    color: #ffffff;
+    background: #07b107;
+    border-color: #07b107;
+}
+
+.job-box-filter a.filtsec:hover i,
+.job-box-filter a.filtsec:focus i {
+    color: #ffffff;
+}
+
+.job-box-filter h4 i {
+    margin-right: 10px;
+}
+
+/*=====================================
+Inbox Message Style
+=======================================*/
+.inbox-message ul {
+    padding: 0;
+    margin: 0;
+}
+
+.inbox-message ul li {
+    background: #fff;
+    list-style: none;
+    position: relative;
+    padding: 15px 20px;
+    border-bottom: 1px solid #fff3cd;
+}
+
+.inbox-message ul li:hover,
+.inbox-message ul li:focus {
+    background: #fff;
+}
+
+.inbox-message .message-avatar {
+    position: absolute;
+    left: 5px;
+    width: 80px;
+    top: 70px;
+    transform: translateY(-50%);
+}
+
+.message-avatar img {
+    display: inline-block;
+    height: 54px;
+}
+
+.inbox-message .message-body {
+    padding-top: 18px;
+    margin-left: 85px;
+    font-size: 15px;
+    color: #323232;
+}
+
+.message-body-heading h5 {
+    font-weight: 600;
+    display: inline-block;
+    color: #62748F;
+    margin: 0 0 7px 0;
+    padding: 0;
+}
+
+.message-body h5 span {
+    border-radius: 50px;
+    line-height: 14px;
+    font-size: 12px;
+    color: #fff;
+    font-style: normal;
+    padding: 4px 10px;
+    margin-left: 5px;
+    margin-top: -5px;
+}
+
+.message-body h5 span.unread {
+    background: #07b107;
+}
+
+.message-body h5 span.important {
+    background: #dd2027;
+}
+
+.message-body h5 span.pending {
+    background: #2196f3;
+}
+
+.message-body-heading span {
+    float: right;
+    color: #62748F;
+    font-size: 14px;
+}
+
+.messages-inbox .message-body p {
+    margin: 0;
+    padding: 0;
+    line-height: 27px;
+    font-size: 15px;
+}
+
+.box_name_eman {
+    padding-top: 5px;
+    font-size: small;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+.btn {
+    border-radius: 0; /* Bo góc nút về 0, tạo thành các góc vuông */
+    border: 0; /* Loại bỏ đường viền mặc định của nút */
+    border-bottom: 4px solid #FFD700; /* Thêm viền dày 4px màu vàng phía dưới nút */
+    margin: 0; /* Xóa khoảng cách ngoài (margin) cho nút */
+    
+    /* Tạo hiệu ứng sọc kẻ chéo màu xanh */
+    background: repeating-linear-gradient(
+        45deg, /* Góc nghiêng của sọc kẻ */
+        #e94e06f1, /* Màu sọc đầu tiên */
+        #d18109f6 10px, /* Đoạn kết thúc sọc đầu tiên và bắt đầu sọc thứ hai */
+        #e72a08bb 20px /* Kết thúc sọc thứ hai, rồi lặp lại */
+    );
+
+    /* Tạo hiệu ứng đổ bóng dưới nút với khoảng cách 5px, mờ nhẹ */
+    -webkit-box-shadow: 0 5px 5px -6px rgba(0, 0, 0, .3); /* Hỗ trợ trên trình duyệt WebKit */
+    -moz-box-shadow: 0 5px 5px -6px rgba(0, 0, 0, .3); /* Hỗ trợ trên trình duyệt Mozilla */
+    box-shadow: 0 5px 5px -6px rgb(0 0 0 / 30%); /* Hỗ trợ trên các trình duyệt khác */
+    
+    height: 45px; /* Chiều cao của nút là 45px */
+    transition: all 0.3s ease; /* Thêm hiệu ứng chuyển mượt */
+}
+
+/* Hiệu ứng khi di chuột qua */
+.btn:hover {
+    background: repeating-linear-gradient(
+        45deg,
+        #ff1e00ea, /* Màu vàng cho sọc đầu tiên khi di chuột */
+        #db6c05e1 10px, /* Đoạn kết thúc sọc đầu tiên và bắt đầu sọc thứ hai */
+        #e74505d8 20px /* Kết thúc sọc thứ hai, rồi lặp lại */
+    );
+    border-bottom: 4px solid #FF8C00; /* Thay đổi viền dưới khi di chuột */
+}
+
+/* Hiệu ứng bấm nút */
+.btn:active {
+    border-bottom: 2px solid #FFD700; /* Giảm độ dày viền dưới khi bấm */
+    -webkit-box-shadow: 0 3px 3px -6px rgba(0, 0, 0, .3); /* Giảm đổ bóng xuống */
+    -moz-box-shadow: 0 3px 3px -6px rgba(0, 0, 0, .3);
+    box-shadow: 0 3px 3px -6px rgb(0 0 0 / 30%);
+    transform: translateY(2px); /* Dịch nút xuống để tạo cảm giác nhấn */
+}
+
+
+
+
+.btn .btn-block:active,
+.btn .btn-lg:active {
+    /* Hiệu ứng khi nhấn nút cho các lớp .btn-block và .btn-lg */
+    -webkit-box-shadow: inset 0 3px 3px -5px rgba(0, 0, 0, .3); /* Tạo hiệu ứng bóng mờ chìm vào bên trong nút trên trình duyệt WebKit */
+    -moz-box-shadow: inset 0 3px 3px -5px rgba(0, 0, 0, .3); /* Tạo bóng mờ chìm vào bên trong trên trình duyệt Mozilla */
+    box-shadow: inset 0 3px 3px -5px rgba(0, 0, 0, .3); /* Tạo bóng mờ chìm vào bên trong trên các trình duyệt khác */
+}
+
+.btn-default {
+    /* Thiết lập màu sắc và bóng mờ mặc định cho nút */
+    color: #555; /* Màu chữ xám đậm */
+    background-color: #f9f9f9; /* Màu nền xám nhạt */
+    border-color: #cacaca; /* Màu viền xám */
+    text-shadow: 1px 1px 0 #f5f5f5; /* Bóng chữ nhẹ màu xám nhạt để tạo hiệu ứng nổi */
+}
+
+.btn-default:hover,
+.btn-default:focus {
+    /* Hiệu ứng khi di chuột hoặc lấy tiêu điểm cho nút mặc định */
+    background-color: #f4f4f4; /* Màu nền nhạt hơn khi di chuột qua */
+    border-color: #bebebe; /* Màu viền xám nhạt hơn */
+}
+
+.btn-success {
+    /* Thiết lập màu sắc cho nút thành công */
+    background-color: #80d752; /* Màu nền xanh lá cây nhạt */
+    border-color: #61be26; /* Màu viền xanh đậm hơn */
+    text-shadow: 1px 1px 0 #5fdb34; /* Bóng chữ màu xanh lá tạo độ nổi bật */
+    border-radius: 15px; /* Bo tròn góc nút */
+}
+
+.btn-success:hover,
+.btn-success:focus {
+    /* Hiệu ứng khi di chuột hoặc lấy tiêu điểm cho nút thành công */
+    background-color: #75cd53; /* Màu nền xanh lá cây nhạt hơn */
+    border-color: #53aa27; /* Màu viền xanh đậm hơn */
+}
+
+.btn-info {
+    /* Thiết lập màu sắc cho nút thông tin */
+    background-color: #39b3d7; /* Màu nền xanh dương nhạt */
+    border-color: #348fd2; /* Màu viền xanh đậm hơn */
+    /* text-shadow: 1px 1px 0 #dba93d;  Bóng chữ màu vàng, đã bị tắt */
+}
+
+
+.btn-info:hover,
+.btn-info:focus {
+    background-color: #45abcd;
+    border-color: #347abe;
+}
+/* Màu của phiosm dowlowad*/
+.btn-download {
+    background-color: #043A34; /* Màu nền  cho nút */
+    color: #ffffff !important; /* Màu chữ , sử dụng `!important` để ưu tiên màu này */
+    margin: 12px 8px; /* Khoảng cách ngoài của nút: 12px trên và dưới, 8px trái và phải */
+    font-weight: 800; /* Chữ đậm (font-weight 800) */
+    font-size: 14px; /* Kích thước chữ là 14px */
+    text-align: center; /* Căn giữa nội dung văn bản */
+    line-height: 30px; /* Chiều cao dòng là 30px, giúp căn chỉnh chiều cao của nút */
+    transition: all 0.3s ease; /* Thêm hiệu ứng chuyển tiếp mượt mà trong 0.3 giây cho tất cả các thuộc tính */
+}
+
+
+/* Định dạng khi di chuột hoặc tập trung vào nút tải xuống */
+.btn-download:hover,
+.btn-download:focus {
+    color: #ffffff !important; /* Đổi màu chữ thành trắng */
+    background-color: #007E70; /* Đổi màu nền thành xanh đậm */
+}
+
+/* Định dạng mặc định cho nút diễn đàn */
+.btn-diendan {
+    background-color: #9d5331; /* Màu nền nâu sẫm */
+    border-color: #6e3a21; /* Màu viền nâu đậm */
+    text-shadow: 1px 1px 0 #9d5331; /* Đổ bóng nhẹ cho chữ để nổi bật */
+}
+
+/* Định dạng khi di chuột hoặc tập trung vào nút diễn đàn */
+.btn-diendan:hover,
+.btn-diendan:focus {
+    background-color: #E37745; /* Đổi màu nền thành cam nhạt hơn khi di chuột vào */
+    border-color: 1px solid #6e3a21; /* Đổi màu viền và làm viền đậm hơn */
+    font-weight: bold; /* Chữ in đậm để nổi bật */
+}
+/* Màu của đăng nhập đăng ký xếp hạng*/
+.btn-action {
+    background-color: #043A34; /* Màu nền xanh đậm (#043A34) cho nút */
+    color: #ffffff !important; /* Màu chữ trắng, sử dụng `!important` để ưu tiên */
+    margin: 12px 8px; /* Khoảng cách ngoài của nút: 12px trên và dưới, 8px trái và phải */
+    font-weight: 800; /* Chữ đậm (font-weight 800) */
+    font-size: 14px; /* Kích thước chữ là 14px */
+    text-align: center; /* Căn giữa nội dung văn bản */
+    line-height: 30px; /* Chiều cao dòng là 30px, giúp căn chỉnh chiều cao của nút */
+    transition: all 0.3s ease; /* Thêm hiệu ứng chuyển tiếp mượt mà trong 0.3 giây cho tất cả các thuộc tính */
+}
+
+
+.btn-action:hover,
+.btn-action:focus {
+    color: #ffffff !important; /* Màu chữ trắng khi hover hoặc focus */
+    background-color: #007E70; /* Màu nền chuyển thành xanh nhạt (#007E70) khi hover hoặc focus */
+}
+
+
+.btn-warning {
+    background-color: #FEAF20; /* Màu nền vàng cam (#FEAF20) cho nút */
+    border-color: #d79a34; /* Màu viền là vàng nhạt (#d79a34) */
+    text-shadow: 1px 1px 0 #db9e34; /* Thêm bóng chữ màu vàng (#db9e34) */
+}
+
+
+.btn-warning:hover,
+.btn-warning:focus {
+    background-color: #f5a620; /* Màu nền sáng hơn khi hover hoặc focus */
+    border-color: #cd9034; /* Màu viền chuyển sang màu vàng sáng hơn */
+}
+
+
+.btn-dark {
+    background-color: #464646; /* Màu nền xám đậm (#464646) cho nút */
+    border-color: #000000; /* Màu viền đen (#000000) */
+    text-shadow: 1px 1px 0 #000000; /* Bóng chữ đen cho chữ trên nút */
+}
+
+
+.btn-danger {
+    background-color: #d73814; /* Màu nền đỏ đậm (#d73814) cho nút */
+    border-color: #be0000; /* Màu viền đỏ đậm (#be0000) */
+    text-shadow: 1px 1px 0 #ac2925; /* Bóng chữ màu đỏ (#ac2925) */
+}
+
+
+.btn-danger:hover,
+.btn-danger:focus {
+    background-color: #000000; /* Màu nền chuyển thành đen khi hover hoặc focus */
+    border-color: #000000; /* Màu viền cũng chuyển thành đen */
+}
+
+
+.btn-navbar {
+    background-color: #9d5331; /* Màu nền nâu đỏ đậm (#9d5331) cho nút */
+    border: 1px solid #6e3a21; /* Viền màu nâu tối (#6e3a21) */
+    font-weight: bold; /* Chữ đậm */
+}
+
+
+.btn-navbar:hover,
+.btn-navbar:focus {
+    background-color: #E37745; /* Màu nền chuyển sang đỏ cam sáng (#E37745) khi hover hoặc focus */
+    border-color: #E37745; /* Viền cũng chuyển thành màu đỏ cam sáng */
+    box-shadow: 0px 0px 15px #E37745; /* Thêm bóng ngoài (box-shadow) màu đỏ cam sáng */
+    text-shadow: 1px 1px 0 #ac2925; /* Bóng chữ màu đỏ đậm (#ac2925) */
+    font-weight: bold; /* Giữ chữ đậm */
+    font-size: 18px; /* Tăng kích thước chữ lên 18px */
+}
+
+
+.active {
+    background: #9d5331; /* Nền màu nâu đỏ đậm (#9d5331) khi nút được chọn (active) */
+    box-shadow: #6e3a21; /* Bóng ngoài màu nâu tối (#6e3a21) */
+    font-size: 18px; /* Kích thước chữ tăng lên 18px */
+}
+
+
+.btn-primary {
+    background-color: #020005; /* Nền màu đen sậm (#020005) cho nút */
+    border-color: #020005; /* Viền cũng màu đen sậm */
+    text-shadow: 1px 1px 0 #020005; /* Bóng chữ đen sậm */
+}
+
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #000000; /* Nền chuyển thành đen khi hover hoặc focus */
+    border-color: #000000; /* Viền cũng chuyển thành màu đen */
+}
+
+
+.btn-magick {
+    color: #fff; /* Màu chữ trắng */
+    background-color: #9d5331; /* Nền màu nâu đỏ đậm (#9d5331) */
+    border-color: #6e3a21; /* Viền màu nâu tối (#6e3a21) */
+    text-shadow: 1px 1px 0 #9d5331; /* Bóng chữ màu nâu đỏ đậm */
+}
+
+
+.btn-magick:hover,
+.btn-magick:focus {
+    color: #fff; /* Màu chữ vẫn giữ là trắng */
+    background-color: #E37745; /* Nền chuyển thành màu đỏ cam sáng khi hover hoặc focus */
+    border-color: #a55f3e; /* Viền chuyển thành màu đỏ cam nhạt hơn */
+}
+
+
+.btn-pressure {
+    position: relative; /* Đặt vị trí của nút tương đối để có thể điều chỉnh vị trí */
+    margin-bottom: 0; /* Loại bỏ khoảng cách dưới nút */
+}
+
+
+.btn-pressure:focus {
+    -moz-outline-style: none; /* Xóa viền khi nút được focus trên Firefox */
+    outline: medium none; /* Xóa viền khi nút được focus trên các trình duyệt khác */
+}
+
+
+.btn-pressure:active,
+.btn-pressure.active {
+    top: 4px; /* Đẩy nút xuống 4px khi nhấn */
+    border: 0; /* Xóa viền khi nút đang được nhấn */
+    position: relative; /* Đặt lại vị trí tương đối */
+}
+
+
+.btn-sensitive:active,
+.btn-sensitive.active {
+    top: 1px; /* Đẩy nút xuống 1px khi nhấn */
+    margin-top: 4px; /* Thêm khoảng cách trên là 4px */
+}
+
+
+.title-topic {
+    font-size: 24px; /* Kích thước chữ là 24px */
+    font-weight: bold; /* Chữ đậm */
+    color: red; /* Màu chữ đỏ */
+}
+
+
+.img-gk {
+    max-width: 100%; /* Ảnh sẽ có chiều rộng tối đa là 100% */
+    height: auto; /* Chiều cao tự động để duy trì tỷ lệ ảnh */
+    border-radius: 5px; /* Bo góc ảnh với bán kính 5px */
+    box-shadow: 0 2px 5px black; /* Thêm bóng đổ cho ảnh */
+}
+
+
+.url {
+    text-decoration: none; /* Loại bỏ gạch dưới cho các liên kết */
+}
+
+
+/* CSS cho button làm mới captcha */
+.style_retryButton__2gxEO {
+    border: none; /* Loại bỏ viền của nút */
+    margin: 0 0 0 16px; /* Đặt margin trái 16px */
+    padding: 0; /* Loại bỏ padding */
+    width: auto; /* Chiều rộng tự động */
+    overflow: visible; /* Để nội dung bị tràn ra ngoài nếu cần */
+    background: transparent; /* Nền trong suốt */
+    color: inherit; /* Màu chữ kế thừa từ phần tử cha */
+    font: inherit; /* Kế thừa kiểu chữ */
+    line-height: normal; /* Chiều cao dòng bình thường */
+    -webkit-font-smoothing: inherit; /* Thừa kế kiểu font từ trình duyệt Webkit */
+    -moz-osx-font-smoothing: inherit; /* Thừa kế kiểu font từ trình duyệt Mozilla trên Mac */
+    -webkit-appearance: none; /* Loại bỏ kiểu dáng mặc định của trình duyệt */
+    outline: none; /* Loại bỏ viền mặc định khi nhấn */
+    text-align: inherit; /* Kế thừa căn chỉnh chữ từ phần tử cha */
+}
+
+
+/* CSS */
+.captcha-image {
+    border: 2px solid #ccc;
+    /* Thay đổi màu và kích thước viền theo ý muốn */
+    border-radius: 4px;
+    /* Để bo góc viền */
+    padding: 2px;
+    /* Tùy chỉnh khoảng cách giữa viền và hình ảnh captcha */
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%; /* Bắt đầu với vị trí nền là 0% */
+    }
+    50% {
+        background-position: 100% 50%; /* Giữa quá trình, vị trí nền thay đổi đến 100% */
+    }
+    100% {
+        background-position: 0% 50%; /* Kết thúc lại ở vị trí 0% */
+    }
+}
+
+.menu-container {
+  display: flex; /* Sử dụng Flexbox để sắp xếp các phần tử con theo chiều ngang */
+  justify-content: space-between; /* Phân chia không gian đều giữa các phần tử con (các menu) */
+  padding: 10px; /* Khoảng cách bên trong container */
+  border-radius: 10px; /* Bo góc cho container */
+  width: 100%; /* Chiều rộng đầy đủ của vùng chứa */
+  max-width: 550px; /* Giới hạn chiều rộng tối đa */
+  margin: 0 auto; /* Căn giữa container */
+  overflow: hidden; /* Đảm bảo bo góc cho toàn bộ container */
+}
+
+.card-header {
+  flex: 1; /* Mỗi phần tử card-header (menu) chiếm 50% chiều rộng của container */
+  padding: 10px; /* Khoảng cách bên trong mỗi ô menu */
+  border: 3px solid #0c5745; /* Viền mỏng xung quanh mỗi menu */
+  margin-right: 10px; /* Khoảng cách giữa các menu */
+  border-radius: 10px; /* Bo góc của menu */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Thêm hiệu ứng chuyển màu */
+  max-width: 48%; /* Đặt chiều rộng tối đa cho mỗi menu (chiếm 50% nhưng có khoảng cách) */
+  box-sizing: border-box; /* Bao gồm padding và border trong tính toán chiều rộng */
+  overflow: hidden; /* Đảm bảo bo góc cho phần tử này */
+}
+
+.card-header:last-child {
+  margin-right: 0; /* Loại bỏ margin phải cho phần tử cuối cùng */
+}
+
+.card-header:hover {
+  background-color: rgba(243, 146, 101, 0.2); /* Màu nền khi hover */
+  border-color: #ffa500; /* Màu viền khi hover */
+}
+
+.card-header:active {
+  background-color: rgba(243, 146, 101, 0.4); /* Màu nền khi nhấn */
+  border-color: #ff4500; /* Màu viền khi nhấn */
+}
+
+.card-header.selected {
+  background-color: #ff0000; /* Màu nền khi chọn */
+  border-color: #ff4500; /* Màu viền khi chọn */
+}
+
+.menu-item {
+  display: flex; /* Đặt các phần tử bên trong menu (hình ảnh và văn bản) theo chiều ngang */
+  align-items: center; /* Căn giữa các phần tử dọc theo trục y (thẳng hàng với hình ảnh và văn bản) */
+}
+
+.menu-img {
+  width: 50px; /* Đặt chiều rộng của hình ảnh */
+  height: 50px; /* Đặt chiều cao của hình ảnh */
+  margin-right: 10px; /* Khoảng cách giữa hình ảnh và nội dung văn bản */
+}
+
+.badge {
+  padding: 5px 10px; /* Khoảng cách bên trong thẻ badge, tạo không gian cho văn bản */
+  font-size: 14px; /* Kích thước phông chữ trong badge */
+  border-radius: 7px; /* Bo góc của badge */
+}
+
+a {
+  text-decoration: none; /* Loại bỏ gạch chân trong thẻ a */
+}
+/* Froum Nạp tiền   */
+.recharge-method-item{
+    background-color:#fab45c;
+    border:3px solid #043A34;
+    border-radius:16px;
+    height:100px;
+    padding:10px;
+    width:100%
+}
+.h-70px{height:70px!important}
+ .recharge-method-item:hover{
+    border:3px solid #fa0c0c
+}.recharge-method-item img{
+    border-radius:16px;
+    max-height:100%;
+    max-width:100%
+}
+ .recharge-method-item.active{
+    background-color:#faeda7;
+    border:3px solid #043A34
+}
+ .form-control{font-size:14px}
+ .center-text:after,.center-text:before{
+    content:"       ";
+    text-decoration:line-through
+}
+ .center-text span{
+    padding-left:3px;padding-right:3px
+}
+ .post-item{
+    background-color:#fab45c;
+    border:1px solid #ffdbb3;
+    border-radius:16px;
+    box-shadow:0 3px 4px rgba(0,0,0,.051);
+    padding:10px
+}
+ .post-item>.post-image{
+    border:none;width:65px
+}.post-item>
+ .post-image>img{
+    border:none;
+    height:50px
+}
+ .post-detail{
+    background-color:#fdf8daa8;
+    border:3px #fab45c;
+    border-image:none;
+    border-radius:10px;
+    border-style:solid solid none;
+    border-width:1px 0;
+    box-shadow:0 3px 8px rgba(0,0,0,.239);
+    color:inherit;padding:5px 10px 10px}
+ .post-image{align-self:start;margin-right:10px;text-align:center;width:65px}
+ .post-image>img{border:none;height:40px}
+ .post-detail p{margin-bottom:0}
+ .post-content{margin-top:6px}
+ .post-info{color:#6c757d!important;font-size:12px;margin-top:-2px}
+ .post-author{color:#dc3545;font-size:12px;font-weight:600}
+ .post-date{color:#6c757d!important;font-size:11px;margin-top:-2px}
+ .recharge-progress{
+    font-size:14px;
+    position:relative
+}
+ .progress-container{
+    background:#737171;
+    background:hsla(0,1%,45%,.3);
+    border-radius:16px;
+    overflow:hidden
+}
+ .progress-main{
+    border-radius:16px;
+    height:8px;
+    overflow:hidden;
+    position:relative
+}
+ .progress-bar,.progress-bg{
+    background:linear-gradient(90deg,#d81a1e,#f1a90a);
+    bottom:0;
+    height:100%;
+    left:0;
+    overflow:hidden;
+    position:absolute;
+    right:0;top:0}
+ .progress-bg{background:repeating-linear-gradient(-45deg,#fff,#fff 3px,transparent 0,transparent 6px);background:repeating-linear-gradient(-45deg,hsla(0,0%,100%,.2),hsla(0,0%,100%,.2) 3px,transparent 0,transparent 6px)}
+ ._3Ne69qQgMJvF7eNZAIsp_D
+ {margin:0 0 10px;
+    padding:12px 0 0
+}
+ .NusvrwidhtE2W6NagO43R{
+    color:#202325;color:rgba(32,35,37,.8)
+}
+ ._1e8_XixJTleoS7HwwmyB-E{
+    position:relative
+}
+ ._2Nf9YEDFm2GHONqPnNHRWH{
+    float:left;position:relative;-webkit-transform:none;transform:none
+}
+ ._2kr5hlXQo0VVTYXPaqefA3{
+    cursor:pointer;height:35px;
+    line-height:35px;
+    position:absolute;
+    top:0;-webkit-transform:translateX(-50%);
+    transform:translateX(-50%);white-space:nowrap
+}
+/* Cấu hình căn chỉnh cho phần tử với class ._2Nf9YEDFm2GHONqPnNHRWH ._12VQKhFQP9a0Wy-denB6p6 */
+._2Nf9YEDFm2GHONqPnNHRWH ._12VQKhFQP9a0Wy-denB6p6 {
+    align-items: center; /* Căn chỉnh các phần tử theo chiều dọc */
+    display: flex; /* Sử dụng flexbox để tạo layout */
+}
+
+/* Cấu hình cho mũi tên chỉ thị */
+._3toQ_1IrcIyWvRGrIm2fHJ {
+    border-color: #d01211 transparent transparent; /* Màu sắc của mũi tên */
+    border-style: solid; /* Định dạng đường viền */
+    border-width: 7px 5px; /* Độ dày đường viền của mũi tên */
+    content: ""; /* Không có nội dung */
+    display: block; /* Hiển thị thành phần dưới dạng block */
+    font-size: 0; /* Không hiển thị chữ */
+    height: 0; /* Chiều cao 0 */
+    left: 50%; /* Căn giữa phần tử theo chiều ngang */
+    line-height: 0; /* Không có độ cao dòng */
+    position: absolute; /* Vị trí tuyệt đối */
+    top: -6px; /* Vị trí cách trên -6px */
+    -webkit-transform: translateX(-50%); /* Căn giữa bằng transform (dành cho trình duyệt Webkit) */
+    transform: translateX(-50%); /* Căn giữa bằng transform */
+    width: 0; /* Chiều rộng 0 */
+}
+
+/* Cấu hình phần tử với class ._3KQP4x4OyaOj6NIpgE7cKm */
+._3KQP4x4OyaOj6NIpgE7cKm {
+    align-items: center; /* Căn chỉnh các phần tử theo chiều dọc */
+    display: flex; /* Sử dụng flexbox để tạo layout */
+    height: 100%; /* Chiều cao 100% */
+    left: -24px; /* Vị trí cách trái -24px */
+    padding: 0 4px 0 0; /* Padding bên phải là 4px */
+    position: absolute; /* Vị trí tuyệt đối */
+}
+
+/* Cấu hình cho phần tử với class ._2KchEf_H4jouWwDFDPi5hm */
+._2KchEf_H4jouWwDFDPi5hm {
+    display: block; /* Hiển thị thành phần dưới dạng block */
+    height: 20px; /* Chiều cao 20px */
+    width: 20px; /* Chiều rộng 20px */
+}
+
+/* Cấu hình cho các liên kết trong menu */
+.nav-justified .nav-item .nav-link {
+    font-weight: 500; /* Đặt độ đậm cho font chữ */
+}
+
+/* Cấu hình cho các liên kết đang active (được chọn) trong thanh điều hướng */
+.nav-tabs .nav-link.active {
+    background-color: #ffb473; /* Màu nền khi liên kết đang active */
+}
+
+/* Cấu hình cho các mục trong danh sách */
+.list-group-item-action, .list-group-item-action:hover {
+    background-color: #feecd8; /* Màu nền khi hover */
+}
+
+/* Cấu hình cho các liên kết trong thanh điều hướng khi focus hoặc hover */
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+    border-color: transparent !important; /* Loại bỏ màu viền khi focus hoặc hover */
+}
+
+/* Cấu hình biểu tượng tải xuống */
+.download-icon {
+    fill: #dc3545; /* Màu đỏ cho biểu tượng */
+    height: 12.5px; /* Chiều cao 12.5px */
+    margin-bottom: 3px; /* Khoảng cách dưới 3px */
+    width: 12.5px; /* Chiều rộng 12.5px */
+}
+
+/* Cấu hình nền cho phần tải xuống */
+.download-bg {
+    background-color: #e9da8475; /* Màu nền vàng nhạt */
+}
+
+/* Cấu hình nền cho phần tải xuống với gợi ý */
+.download-bg.suggestion {
+    background-color: #ffb5a2 !important; /* Nền đỏ khi có gợi ý */
+}
+
+/* Cấu hình cho phần hiển thị video */
+.video-wrapper {
+    height: 0; /* Chiều cao 0 */
+    overflow: hidden; /* Ẩn phần tràn */
+    padding-bottom: 56.25%; /* Tỷ lệ 16:9 */
+    position: relative; /* Đặt vị trí relative */
+}
+
+/* Cấu hình iframe bên trong video */
+.video-wrapper iframe {
+    height: 100%; /* Chiều cao 100% */
+    left: 0; /* Căn trái */
+    position: absolute; /* Vị trí tuyệt đối */
+    top: 0; /* Căn trên */
+    width: 100%; /* Chiều rộng 100% */
+}
+
+/* Cấu hình cho phần nhập bình luận */
+.comment-input {
+    background-color: #fffcf1; /* Màu nền vàng nhạt */
+    border-radius: 10px; /* Bo góc 10px */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .239); /* Bóng mờ */
+}
+
+
+  
+  

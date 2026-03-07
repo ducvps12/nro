@@ -1,0 +1,41 @@
+RewriteEngine On
+RewriteBase /
+
+# Rút gọn URL đến các trang cụ thể
+RewriteRule ^dangnhap$ /pages/dangnhap.php [L]
+RewriteRule ^dangky$ /pages/dangky.php [L]
+RewriteRule ^dangxuat$ /pages/dangxuat.php [L]
+RewriteRule ^doimatkhau$ /pages/doimatkhau.php [L]
+RewriteRule ^napthe$ /pages/napthe.php [L]
+RewriteRule ^naptien$ /pages/naptien.php [L]
+RewriteRule ^topsm$ /pages/topsm.php [L]
+RewriteRule ^topnv$ /pages/topnv.php [L]
+RewriteRule ^qr$ /pages/qr.php [L]
+RewriteRule ^onate$ /pages/onate.php [L]
+RewriteRule ^atm_bank$ /pages/atmbank.php [L]
+RewriteRule ^auto-acb$ /pages/auto-acb.php [L]
+RewriteRule ^callback$ /pages/callback.php [L]
+RewriteRule ^f12$ f12.php [L]
+RewriteRule ^post_forum$ /pages/dangbai_diendan.php [L]
+RewriteRule ^adminservice$ /pages/adminservice.php [L]
+
+# Link cron
+RewriteRule ^cron_atm$ /pages/mbbank.php [L]
+# ----------------------
+# DIỄN ĐÀN (FORUM)
+# ----------------------
+
+# Trang chủ diễn đàn
+RewriteRule ^dien-dan$ /pages/forum/index.php [L]
+
+# Xem bài viết theo ID: /dien-dan/bai/123
+RewriteRule ^dien-dan/bai/([0-9]+)$ /pages/forum/view_post.php?id=$1 [L,QSA]
+
+# Xem chuyên mục: /dien-dan/muc/5
+RewriteRule ^dien-dan/muc/([0-9]+)$ /pages/forum/view_category.php?id=$1 [L,QSA]
+
+# Đăng bài: /dien-dan/dang-bai
+RewriteRule ^dien-dan/dang-bai$ /pages/forum/create_post.php [L]
+
+# Chỉnh sửa bài: /dien-dan/sua-bai/123
+RewriteRule ^dien-dan/sua-bai/([0-9]+)$ /pages/forum/edit_post.php?id=$1 [L,QSA]
