@@ -464,35 +464,107 @@ if (isset($_GET['id']) && !empty($rows)) {
 
   <div class="border-danger border-top mt-4"></div>
 
-  <h2 style="font-size:22px;color:#664d03;">Hướng Dẫn Tân Thủ</h2>
-  <p style="padding: 0 24px; color: #343a40; font-size: 16px;">
-    - 1. Đăng ký tài khoản<br>
-    Chú Bé Rồng sử dụng Tài Khoản riêng, không chung với bất kỳ Trò Chơi nào khác.<br>
-    Bạn có thể đăng ký tài khoản miễn phí ngay trong game, hoặc trên trang Diễn Đàn.<br>
-    Khi đăng ký, bạn nên sử dụng đúng số điện thoại hoặc email thật của mình.<br>
-    Nếu sử dụng thông tin sai, người có số điện thoại hoặc email thật sẽ có thể lấy mật khẩu của bạn.<br>
-    Số điện thoại và email của bạn sẽ không hiện ra cho người khác thấy. Admin không bao giờ hỏi mật khẩu của bạn.<br><br>
+  <h2 style="font-size:22px;color:#664d03;">Hướng Dẫn Cơ Chế Game</h2>
+  <div style="padding: 0 16px; color: #343a40; font-size: 14px;">
 
-    - 2. Hướng dẫn điều khiển<br>
-    Đối với máy bàn phím: Dùng phím mũi tên, phím số, để điều khiển nhân vật. Phím chọn giữa để tương tác.<br>
-    Đối với máy cảm ứng: Dùng tay chạm vào màn hình cảm ứng để di chuyển. Chạm nhanh 2 lần vào 1 đối tượng để tương tác.<br>
-    Đối với PC: Dùng chuột, click chuột phải để di chuyển, click chuột trái để chọn, click đôi vào đối tượng để tương tác.<br><br>
+    <!-- 1. Điểm Tiềm Năng -->
+    <h3 style="font-size:17px;color:#664d03;margin-top:16px;">⭐ 1. Điểm Tiềm Năng</h3>
+    <p>Điểm kiếm được khi lên cấp hoặc tập luyện, dùng để tăng chỉ số căn bản.</p>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:8px;">
+      <tr style="background:#fff3cd;"><th style="padding:5px 8px;border:1px solid #ddd;text-align:left;">Chỉ số</th><th style="padding:5px 8px;border:1px solid #ddd;text-align:left;">Mô tả</th></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Máu (HP)</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Tăng lượng máu tối đa</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Ki (MP)</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Tăng lượng Ki tối đa</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Sức Đánh</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Tăng sát thương vật lý</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Giáp</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Giảm sát thương nhận vào</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Chí Mạng</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Tăng chỉ số đánh chí mạng</td></tr>
+    </table>
+    <p style="font-size:13px;"><b>Chi phí nâng cấp:</b> Máu/Ki tăng tuyến tính. Sức Đánh tỉ lệ hiện tại. Giáp bắt đầu 500K/lần. Chí Mạng tăng hàm mũ (x5/cấp).</p>
+    <p style="font-size:12px;color:#856404;"><i>⚠ Mỗi chỉ số có giới hạn theo lực chiến. Khi đạt giới hạn, cần tăng lực chiến trước.</i></p>
 
-    - 3. Một số thông tin căn bản<br>
-    - Đậu thần dùng để tăng KI và HP ngay lập tức.<br>
-    - Bạn chỉ mang theo người được 10 hạt đậu. Nếu muốn mang nhiều hơn, hãy xin từ bạn bè trong Bang.<br>
-    - Tất cả các sách kỹ năng đều có thể học miễn phí tại Quy Lão Kame, khi bạn có đủ điểm tiềm năng.<br>
-    - Bạn không thể bay, dùng kỹ năng, nếu hết KI.<br>
-    - Tấn công quái vật cùng bạn bè trong Bang sẽ mang lại nhiều điểm tiềm năng hơn đánh một mình.<br>
-    - Tập luyện với bạn bè tại khu vực thích hợp sẽ mang lại nhiều điểm tiềm năng hơn đánh quái vật.<br>
-    - Khi được nâng cấp, đậu thần sẽ phục hồi nhiều HP và KI hơn.<br>
-    - Vào trò chơi đều đặn mỗi ngày để nhận được Ngọc miễn phí.<br>
-    - Đùi gà sẽ phục hồi 100% HP, KI. Cà chua phục hồi 100% KI. Cà rốt phục hồi 100% HP.<br>
-    - Cây đậu thần kết một hạt sau một thời gian, cho dù bạn đang offline.<br>
-    - Sau 3 ngày không tham gia trò chơi, bạn sẽ bị giảm sức mạnh do lười luyện tập.<br>
-    - Bạn sẽ giảm thể lực khi đánh quái, nhưng sẽ tăng lại thể lực khi không đánh nữa.<br>
-    - Ngoài ra, bạn có thể tham khảo những thông tin sau để có thể dễ dàng tham gia trò chơi hơn.
-  </p>
+    <div class="border-danger border-top mt-3 mb-3"></div>
+
+    <!-- 2. Đồ Thần Linh -->
+    <h3 style="font-size:17px;color:#664d03;">🛡️ 2. Đồ Thần Linh</h3>
+    <p>Trang bị cao cấp gồm 5 bộ phận: <b>Áo, Quần, Găng, Giày, Nhẫn</b>.</p>
+    <p><b>Cách có:</b> Nhận qua Mốc Nạp, Boss, sự kiện đặc biệt, hoặc mua/trao đổi trong game.</p>
+    <p style="font-size:12px;color:#856404;"><i>⚠ Trang bị Thần Linh là nguyên liệu để nâng lên Set Kích Hoạt.</i></p>
+
+    <div class="border-danger border-top mt-3 mb-3"></div>
+
+    <!-- 3. Set Kích Hoạt -->
+    <h3 style="font-size:17px;color:#664d03;">⚔️ 3. Set Kích Hoạt (SKH)</h3>
+    <p>Trang bị <b>cao nhất</b> trong game. Mặc đủ <b>5 mảnh cùng set</b> → nhận hiệu ứng đặc biệt cực mạnh.</p>
+    <p><b>Nâng cấp:</b> 1 đồ Thần Linh + 30 Thỏi Vàng → tỉ lệ <b>80%</b> thành công. Thất bại chỉ mất vàng, giữ đồ.</p>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;margin:8px 0;">
+      <tr style="background:#fff3cd;"><th style="padding:5px 8px;border:1px solid #ddd;text-align:left;">Tên Set</th><th style="padding:5px 8px;border:1px solid #ddd;text-align:left;">Hiệu ứng khi đủ 5 mảnh</th></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Kirin</b></td><td style="padding:5px 8px;border:1px solid #ddd;">QCKK gây x2 sát thương</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Songoku</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Kamejoko gây x2 sát thương</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Picolo</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Makankosappo +80% dame quái, +50% PvP</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Ốc Tiêu</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Liên Hoàn (Namek) x2 sát thương</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Pikkoro ĐM</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Đệ tử gây x2 sát thương</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Kakarot</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Đấm XD gây x2 sát thương</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Nappa</b></td><td style="padding:5px 8px;border:1px solid #ddd;">+80% HP tối đa</td></tr>
+    </table>
+    <p style="font-size:12px;color:#856404;"><i>⚠ Đồ SKH sau khi nâng sẽ bị khóa, không thể giao dịch.</i></p>
+
+    <div class="border-danger border-top mt-3 mb-3"></div>
+
+    <!-- 4. Đệ Tử -->
+    <h3 style="font-size:17px;color:#664d03;">🐾 4. Đệ Tử (Pet)</h3>
+    <p>Bạn đồng hành chiến đấu, tự động tấn công kẻ địch.</p>
+    <p>
+      - <b>Đệ tử thường:</b> Mốc Nạp 50k, Shop, sự kiện<br>
+      - <b>Đệ tử Mabu:</b> Sự kiện hoặc Mốc Nạp cao<br>
+      - <b>Đệ tử Đen:</b> Hiếm nhất, từ Mốc Nạp hoặc boss đặc biệt
+    </p>
+    <p style="font-size:13px;">Mặc Set Pikkoro ĐM → đệ tử gây <b>x2 sát thương</b>. Mỗi người mang 1 đệ tử.</p>
+
+    <div class="border-danger border-top mt-3 mb-3"></div>
+
+    <!-- 5. Mốc Nạp -->
+    <h3 style="font-size:17px;color:#664d03;">💰 5. Mốc Nạp (Thưởng Tích Lũy)</h3>
+    <p>Thưởng theo tổng nạp, mỗi mốc nhận <b>1 lần duy nhất</b>.</p>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;margin:8px 0;">
+      <tr style="background:#fff3cd;"><th style="padding:5px 8px;border:1px solid #ddd;text-align:left;">Mốc</th><th style="padding:5px 8px;border:1px solid #ddd;text-align:left;">Phần Thưởng</th></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>50K</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Đệ tử thường</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>100K</b></td><td style="padding:5px 8px;border:1px solid #ddd;">20 Đá Bảo Vệ</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>200K</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Cải Trang Vô Hình VIP</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>500K</b></td><td style="padding:5px 8px;border:1px solid #ddd;">1 bộ Thần Linh + 30 Đá BV</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>1 Triệu</b></td><td style="padding:5px 8px;border:1px solid #ddd;">CT Super Broly SSJ4 + Thần Linh + 50 Đá BV</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>2 Triệu</b></td><td style="padding:5px 8px;border:1px solid #ddd;">CT Black Goku Rosé + Thần Linh + 100 Đá BV</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>5 Triệu</b></td><td style="padding:5px 8px;border:1px solid #ddd;">CT Hit + Thần Linh + 999 Mảnh Găng Thiên Sứ + 500 Đá BV</td></tr>
+    </table>
+
+    <div class="border-danger border-top mt-3 mb-3"></div>
+
+    <!-- 6. Viên Ngọc Rồng -->
+    <h3 style="font-size:17px;color:#664d03;">🐉 6. Viên Ngọc Rồng</h3>
+    <p>Thu thập đủ <b>7 viên ngọc</b> (1★ → 7★) để gọi Rồng Thần ước 1 điều ước.</p>
+    <p><b>Cách kiếm:</b> Quái rơi (tỉ lệ ~0.08% ngọc cao cấp), sự kiện, quà tặng hệ thống.</p>
+
+    <div class="border-danger border-top mt-3 mb-3"></div>
+
+    <!-- 7. Đá Bảo Vệ -->
+    <h3 style="font-size:17px;color:#664d03;">💎 7. Đá Bảo Vệ</h3>
+    <p>Dùng khi <b>nâng sao trang bị</b> để tránh mất đồ khi thất bại.</p>
+    <p>
+      - <b>Không dùng đá:</b> Fail → đồ có thể biến mất ❌<br>
+      - <b>Có dùng đá:</b> Fail → đồ giữ nguyên, chỉ mất đá ✅
+    </p>
+
+    <div class="border-danger border-top mt-3 mb-3"></div>
+
+    <!-- Lộ trình tân thủ -->
+    <h3 style="font-size:17px;color:#664d03;">🗺️ Lộ Trình Cho Tân Thủ</h3>
+    <div style="background:#fff8e1;border-radius:7px;padding:10px 14px;font-size:13px;">
+      <b>1.</b> Đăng ký → nhận gift code tân thủ<br>
+      <b>2.</b> Lên cấp → phân bổ Tiềm Năng vào Máu &amp; Sức Đánh trước<br>
+      <b>3.</b> Nhận Mốc Nạp để có đồ Thần Linh sớm<br>
+      <b>4.</b> Dùng Thỏi Vàng nâng Thần Linh → Set Kích Hoạt<br>
+      <b>5.</b> Mặc đủ 5 mảnh cùng Set để kích hoạt hiệu ứng<br>
+      <b>6.</b> Nuôi đệ tử và săn 7 viên ngọc rồng
+    </div>
+  </div>
 </div>
   <script type="text/javascript">
     $(document).ready(function() {
