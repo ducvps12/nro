@@ -464,105 +464,159 @@ if (isset($_GET['id']) && !empty($rows)) {
 
   <div class="border-danger border-top mt-4"></div>
 
-  <h2 style="font-size:22px;color:#664d03;">Hướng Dẫn Cơ Chế Game</h2>
+  <h2 style="font-size:22px;color:#664d03;">Hướng Dẫn Các Cơ Chế Trong Game</h2>
   <div style="padding: 0 16px; color: #343a40; font-size: 14px;">
 
     <!-- 1. Điểm Tiềm Năng -->
-    <h3 style="font-size:17px;color:#664d03;margin-top:16px;">⭐ 1. Điểm Tiềm Năng</h3>
-    <p>Điểm kiếm được khi lên cấp hoặc tập luyện, dùng để tăng chỉ số căn bản.</p>
+    <h3 style="font-size:17px;color:#664d03;margin-top:16px;">⭐ 1. Điểm Tiềm Năng (Phân Bổ Chỉ Số Gốc)</h3>
+    <p>Điểm Tiềm Năng là điểm bạn kiếm được khi lên cấp hoặc tập luyện, dùng để tăng các chỉ số căn bản của nhân vật.</p>
+    <p><b>Các chỉ số có thể nâng:</b></p>
     <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:8px;">
       <tr style="background:#fff3cd;"><th style="padding:5px 8px;border:1px solid #ddd;text-align:left;">Chỉ số</th><th style="padding:5px 8px;border:1px solid #ddd;text-align:left;">Mô tả</th></tr>
       <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Máu (HP)</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Tăng lượng máu tối đa</td></tr>
       <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Ki (MP)</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Tăng lượng Ki tối đa</td></tr>
       <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Sức Đánh</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Tăng sát thương vật lý</td></tr>
-      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Giáp</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Giảm sát thương nhận vào</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Giáp (Defense)</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Tăng khả năng giảm sát thương nhận vào</td></tr>
       <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Chí Mạng</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Tăng chỉ số đánh chí mạng</td></tr>
     </table>
-    <p style="font-size:13px;"><b>Chi phí nâng cấp:</b> Máu/Ki tăng tuyến tính. Sức Đánh tỉ lệ hiện tại. Giáp bắt đầu 500K/lần. Chí Mạng tăng hàm mũ (x5/cấp).</p>
-    <p style="font-size:12px;color:#856404;"><i>⚠ Mỗi chỉ số có giới hạn theo lực chiến. Khi đạt giới hạn, cần tăng lực chiến trước.</i></p>
+    <p><b>Chi phí nâng cấp:</b></p>
+    <p style="font-size:13px;padding-left:10px;">
+      - <b>Máu / Ki:</b> Chi phí tăng tuyến tính theo chỉ số hiện tại.<br>
+      - <b>Sức Đánh:</b> Chi phí tăng theo tỉ lệ với sức đánh hiện tại.<br>
+      - <b>Giáp:</b> Chi phí bắt đầu rất cao (500,000 điểm/lần), tăng dần mỗi cấp.<br>
+      - <b>Chí Mạng:</b> Chi phí <b>tăng hàm mũ</b> (nhân 5 lần mỗi cấp). Cực kỳ đắt ở cấp cao — cần tích lũy rất nhiều tiềm năng.
+    </p>
+    <p style="font-size:12px;color:#856404;background:#fff8e1;border-radius:5px;padding:8px 12px;"><i>⚠ <b>Lưu ý:</b> Mỗi chỉ số có giới hạn tối đa dựa trên <b>lực chiến</b> của nhân vật. Khi đạt "Không đủ giới hạn lực chiến", bạn cần tăng lực chiến trước (lên cấp, trang bị tốt hơn) mới có thể tiếp tục nâng.</i></p>
 
     <div class="border-danger border-top mt-3 mb-3"></div>
 
     <!-- 2. Đồ Thần Linh -->
-    <h3 style="font-size:17px;color:#664d03;">🛡️ 2. Đồ Thần Linh</h3>
-    <p>Trang bị cao cấp gồm 5 bộ phận: <b>Áo, Quần, Găng, Giày, Nhẫn</b>.</p>
-    <p><b>Cách có:</b> Nhận qua Mốc Nạp, Boss, sự kiện đặc biệt, hoặc mua/trao đổi trong game.</p>
-    <p style="font-size:12px;color:#856404;"><i>⚠ Trang bị Thần Linh là nguyên liệu để nâng lên Set Kích Hoạt.</i></p>
+    <h3 style="font-size:17px;color:#664d03;">🛡️ 2. Đồ Thần Linh (Set Thần Linh)</h3>
+    <p>Đây là cấp trang bị cao của game, gồm 5 bộ phận: <b>Áo, Quần, Găng, Giày, Nhẫn</b>.</p>
+    <p><b>Cách có đồ Thần Linh:</b></p>
+    <p style="font-size:13px;padding-left:10px;">
+      - Nhận qua <b>Mốc Nạp</b> (xem mục 5 bên dưới)<br>
+      - Nhận từ <b>Boss</b> hoặc sự kiện đặc biệt<br>
+      - Mua/trao đổi trong game (nếu chưa khóa)
+    </p>
+    <p><b>Hệ hành tinh:</b></p>
+    <p style="font-size:13px;padding-left:10px;">
+      - <b>Trái Đất:</b> Áo 555, Quần 556, Găng 562, Giày 563, Nhẫn 561<br>
+      - <b>Namek:</b> Áo 557, Quần 558, Găng 564, Giày 565, Nhẫn 561<br>
+      - <b>Xayda:</b> Áo 559, Quần 560, Găng 566, Giày 567, Nhẫn 561
+    </p>
+    <p style="font-size:12px;color:#856404;background:#fff8e1;border-radius:5px;padding:8px 12px;"><i>⚠ Trang bị Thần Linh mang chỉ số cơ bản rất cao. Nó là <b>nguyên liệu</b> để nâng lên cấp cao hơn là <b>Set Kích Hoạt</b>.</i></p>
 
     <div class="border-danger border-top mt-3 mb-3"></div>
 
     <!-- 3. Set Kích Hoạt -->
     <h3 style="font-size:17px;color:#664d03;">⚔️ 3. Set Kích Hoạt (SKH)</h3>
-    <p>Trang bị <b>cao nhất</b> trong game. Mặc đủ <b>5 mảnh cùng set</b> → nhận hiệu ứng đặc biệt cực mạnh.</p>
-    <p><b>Nâng cấp:</b> 1 đồ Thần Linh + 30 Thỏi Vàng → tỉ lệ <b>80%</b> thành công. Thất bại chỉ mất vàng, giữ đồ.</p>
+    <p>Set Kích Hoạt là cấp trang bị <b>cao nhất</b> trong game, mạnh hơn nhiều so với Thần Linh. Khi mặc đủ <b>5 mảnh cùng set</b>, bạn sẽ nhận được <b>hiệu ứng đặc biệt cực mạnh</b>.</p>
+    <p><b>Cách nâng Thần Linh → Set Kích Hoạt:</b></p>
+    <p style="font-size:13px;padding-left:10px;">
+      1. Cần: <b>1 đồ Thần Linh</b> + <b>30 Thỏi Vàng</b><br>
+      2. Tỉ lệ thành công: <b>80%</b> (thất bại mất 30 Thỏi Vàng, giữ lại đồ Thần Linh)<br>
+      3. Thực hiện tại NPC tổ hợp đồ trong game
+    </p>
+    <p><b>Các Set Kích Hoạt và hiệu ứng khi mặc đủ 5 mảnh:</b></p>
     <table style="width:100%;border-collapse:collapse;font-size:13px;margin:8px 0;">
-      <tr style="background:#fff3cd;"><th style="padding:5px 8px;border:1px solid #ddd;text-align:left;">Tên Set</th><th style="padding:5px 8px;border:1px solid #ddd;text-align:left;">Hiệu ứng khi đủ 5 mảnh</th></tr>
-      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Kirin</b></td><td style="padding:5px 8px;border:1px solid #ddd;">QCKK gây x2 sát thương</td></tr>
-      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Songoku</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Kamejoko gây x2 sát thương</td></tr>
-      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Picolo</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Makankosappo +80% dame quái, +50% PvP</td></tr>
-      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Ốc Tiêu</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Liên Hoàn (Namek) x2 sát thương</td></tr>
-      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Pikkoro ĐM</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Đệ tử gây x2 sát thương</td></tr>
-      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Kakarot</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Đấm XD gây x2 sát thương</td></tr>
-      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Nappa</b></td><td style="padding:5px 8px;border:1px solid #ddd;">+80% HP tối đa</td></tr>
+      <tr style="background:#fff3cd;"><th style="padding:5px 8px;border:1px solid #ddd;text-align:left;">Tên Set</th><th style="padding:5px 8px;border:1px solid #ddd;text-align:left;">Hiệu ứng đặc biệt</th></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set XiHang</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Hiệu ứng đặc thù</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Kirin</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Kỹ năng <b>QCKK</b> (ID 10) gây <b>x2 sát thương</b></td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Songoku</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Kỹ năng <b>Kamejoko</b> (ID 1) gây <b>x2 sát thương</b></td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Picolo</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Kỹ năng <b>Makankosappo</b> (ID 11) tăng <b>+80% sát thương</b> quái, +50% PvP</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Ốc Tiêu</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Kỹ năng <b>Liên Hoàn</b> (Namek) gây <b>x2 sát thương</b></td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Pikkoro Đại Ma</b></td><td style="padding:5px 8px;border:1px solid #ddd;"><b>Đệ tử</b> gây <b>x2 sát thương</b></td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Kakarot</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Kỹ năng <b>đấm XD</b> (ID 4) gây <b>x2 sát thương</b></td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Ca Dic</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Hiệu ứng đặc thù</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Set Nappa</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Tăng <b>+80% HP tối đa</b></td></tr>
     </table>
-    <p style="font-size:12px;color:#856404;"><i>⚠ Đồ SKH sau khi nâng sẽ bị khóa, không thể giao dịch.</i></p>
+    <p style="font-size:13px;padding-left:10px;">
+      - Muốn có hiệu ứng, <b>phải mặc đủ 5 mảnh cùng tên set</b>.<br>
+      - Đồ SKH sau khi nâng sẽ <b>không thể giao dịch</b> (bị khóa).
+    </p>
 
     <div class="border-danger border-top mt-3 mb-3"></div>
 
     <!-- 4. Đệ Tử -->
-    <h3 style="font-size:17px;color:#664d03;">🐾 4. Đệ Tử (Pet)</h3>
-    <p>Bạn đồng hành chiến đấu, tự động tấn công kẻ địch.</p>
-    <p>
-      - <b>Đệ tử thường:</b> Mốc Nạp 50k, Shop, sự kiện<br>
-      - <b>Đệ tử Mabu:</b> Sự kiện hoặc Mốc Nạp cao<br>
-      - <b>Đệ tử Đen:</b> Hiếm nhất, từ Mốc Nạp hoặc boss đặc biệt
+    <h3 style="font-size:17px;color:#664d03;">🐾 4. Đệ Tử (Pet / Chim Chiến)</h3>
+    <p>Đệ tử là người bạn đồng hành chiến đấu cùng nhân vật. Đệ tử sẽ tự động tấn công kẻ địch khi bạn chiến đấu.</p>
+    <p><b>Phân loại đệ tử theo độ hiếm:</b></p>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;margin:8px 0;">
+      <tr style="background:#fff3cd;"><th style="padding:5px 8px;border:1px solid #ddd;text-align:left;">Loại</th><th style="padding:5px 8px;border:1px solid #ddd;text-align:left;">Cách kiếm</th></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Đệ tử thường</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Nhận tại Mốc Nạp 50k, mua tại Shop, hoặc từ sự kiện</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Đệ tử Mabu</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Hiếm hơn, thường từ sự kiện hoặc Mốc Nạp cao</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>Đệ tử Đen</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Hiếm nhất, thường từ Mốc Nạp hoặc boss đặc biệt</td></tr>
+    </table>
+    <p><b>Lưu ý chiến đấu với đệ tử:</b></p>
+    <p style="font-size:13px;padding-left:10px;">
+      - Nếu mặc <b>Set Pikkoro Đại Ma</b> (đủ 5 mảnh), đệ tử sẽ gây gấp đôi sát thương.<br>
+      - Đệ tử cần được <b>nuôi cấp</b> để tăng sức mạnh.<br>
+      - Mỗi người chỉ mang được <b>1 đệ tử</b> cùng lúc khi chiến đấu.
     </p>
-    <p style="font-size:13px;">Mặc Set Pikkoro ĐM → đệ tử gây <b>x2 sát thương</b>. Mỗi người mang 1 đệ tử.</p>
 
     <div class="border-danger border-top mt-3 mb-3"></div>
 
     <!-- 5. Mốc Nạp -->
-    <h3 style="font-size:17px;color:#664d03;">💰 5. Mốc Nạp (Thưởng Tích Lũy)</h3>
-    <p>Thưởng theo tổng nạp, mỗi mốc nhận <b>1 lần duy nhất</b>.</p>
+    <h3 style="font-size:17px;color:#664d03;">💰 5. Mốc Nạp (Milestone Thưởng Nạp Tích Lũy)</h3>
+    <p>Đây là hệ thống thưởng theo tổng số tiền bạn đã nạp vào game. Mỗi mốc chỉ nhận được <b>1 lần duy nhất</b>.</p>
     <table style="width:100%;border-collapse:collapse;font-size:13px;margin:8px 0;">
-      <tr style="background:#fff3cd;"><th style="padding:5px 8px;border:1px solid #ddd;text-align:left;">Mốc</th><th style="padding:5px 8px;border:1px solid #ddd;text-align:left;">Phần Thưởng</th></tr>
-      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>50K</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Đệ tử thường</td></tr>
-      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>100K</b></td><td style="padding:5px 8px;border:1px solid #ddd;">20 Đá Bảo Vệ</td></tr>
-      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>200K</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Cải Trang Vô Hình VIP</td></tr>
-      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>500K</b></td><td style="padding:5px 8px;border:1px solid #ddd;">1 bộ Thần Linh + 30 Đá BV</td></tr>
-      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>1 Triệu</b></td><td style="padding:5px 8px;border:1px solid #ddd;">CT Super Broly SSJ4 + Thần Linh + 50 Đá BV</td></tr>
-      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>2 Triệu</b></td><td style="padding:5px 8px;border:1px solid #ddd;">CT Black Goku Rosé + Thần Linh + 100 Đá BV</td></tr>
-      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>5 Triệu</b></td><td style="padding:5px 8px;border:1px solid #ddd;">CT Hit + Thần Linh + 999 Mảnh Găng Thiên Sứ + 500 Đá BV</td></tr>
+      <tr style="background:#fff3cd;"><th style="padding:5px 8px;border:1px solid #ddd;text-align:left;">Mốc Nạp</th><th style="padding:5px 8px;border:1px solid #ddd;text-align:left;">Phần Thưởng</th></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>50.000đ</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Đệ tử thường</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>100.000đ</b></td><td style="padding:5px 8px;border:1px solid #ddd;">20 Đá Bảo Vệ</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>200.000đ</b></td><td style="padding:5px 8px;border:1px solid #ddd;">Cải Trang Vô Hình VIP</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>500.000đ</b></td><td style="padding:5px 8px;border:1px solid #ddd;">1 bộ đồ Thần Linh + 30 Đá Bảo Vệ</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>1.000.000đ</b></td><td style="padding:5px 8px;border:1px solid #ddd;">CT Super Broly SSJ4 + Đồ Thần Linh + 50 Đá Bảo Vệ</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>2.000.000đ</b></td><td style="padding:5px 8px;border:1px solid #ddd;">CT Super Black Goku Rosé + Đồ Thần Linh + 100 Đá Bảo Vệ</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #ddd;"><b>5.000.000đ</b></td><td style="padding:5px 8px;border:1px solid #ddd;">CT Hit + Đồ Thần Linh + 999 Mảnh Găng Thiên Sứ + 500 Đá Bảo Vệ</td></tr>
     </table>
+    <p><b>Chỉ số cải trang cao cấp (phần thưởng Mốc Nạp):</b></p>
+    <p style="font-size:13px;padding-left:10px;">
+      - <b>CT Super Broly SSJ4:</b> SD+30%, HP+30%, KI+30%, Giáp+5%, Tránh+5%, Chí Mạng Kép+10%, Chí Mạng+5<br>
+      - <b>CT Super Black Goku Rosé:</b> SD+35%, HP+35%, KI+35%, Giáp+10%, Tránh+10%, Chí Mạng Kép+15%, Chí Mạng+5<br>
+      - <b>CT Hit:</b> Chí Mạng Kép+50%, SD+15%, Chí Mạng+10
+    </p>
 
     <div class="border-danger border-top mt-3 mb-3"></div>
 
     <!-- 6. Viên Ngọc Rồng -->
-    <h3 style="font-size:17px;color:#664d03;">🐉 6. Viên Ngọc Rồng</h3>
-    <p>Thu thập đủ <b>7 viên ngọc</b> (1★ → 7★) để gọi Rồng Thần ước 1 điều ước.</p>
-    <p><b>Cách kiếm:</b> Quái rơi (tỉ lệ ~0.08% ngọc cao cấp), sự kiện, quà tặng hệ thống.</p>
+    <h3 style="font-size:17px;color:#664d03;">🐉 6. Viên Ngọc Rồng (7 Viên Ngọc)</h3>
+    <p>Khi thu thập đủ 7 viên ngọc rồng (từ 1 sao đến 7 sao), bạn có thể gọi Rồng Thần để ước 1 điều ước.</p>
+    <p><b>Điều ước thường gặp:</b></p>
+    <p style="font-size:13px;padding-left:10px;">
+      - Nhận ngọc / vật phẩm<br>
+      - Hồi phục nhân vật<br>
+      - Các phần thưởng đặc biệt khác
+    </p>
+    <p><b>Cách kiếm ngọc rồng:</b></p>
+    <p style="font-size:13px;padding-left:10px;">
+      - <b>Hanabi rơi</b> từ quái khi tiêu diệt (tỉ lệ khá thấp ~0.08% cho ngọc cao cấp)<br>
+      - <b>Sự kiện</b> do admin tổ chức<br>
+      - <b>Quà tặng</b> từ hệ thống hoặc mốc nạp
+    </p>
 
     <div class="border-danger border-top mt-3 mb-3"></div>
 
     <!-- 7. Đá Bảo Vệ -->
-    <h3 style="font-size:17px;color:#664d03;">💎 7. Đá Bảo Vệ</h3>
-    <p>Dùng khi <b>nâng sao trang bị</b> để tránh mất đồ khi thất bại.</p>
-    <p>
-      - <b>Không dùng đá:</b> Fail → đồ có thể biến mất ❌<br>
-      - <b>Có dùng đá:</b> Fail → đồ giữ nguyên, chỉ mất đá ✅
+    <h3 style="font-size:17px;color:#664d03;">💎 7. Đá Bảo Vệ (Tăng Sức Mạnh Trang Bị)</h3>
+    <p>Đá Bảo Vệ được dùng khi <b>nâng cấp sao</b> cho trang bị để tránh mất đồ khi thất bại.</p>
+    <p style="font-size:13px;padding-left:10px;">
+      - Khi nâng sao trang bị mà <b>không dùng đá</b>: nếu fail → đồ có thể biến mất ❌<br>
+      - Khi nâng sao trang bị mà <b>có dùng đá</b>: nếu fail → đồ vẫn giữ nguyên, chỉ mất đá ✅<br>
+      - Đá bảo vệ có thể nhận từ <b>Mốc Nạp</b>, <b>sự kiện</b>, hoặc mua trong game.
     </p>
 
     <div class="border-danger border-top mt-3 mb-3"></div>
 
     <!-- Lộ trình tân thủ -->
-    <h3 style="font-size:17px;color:#664d03;">🗺️ Lộ Trình Cho Tân Thủ</h3>
+    <h3 style="font-size:17px;color:#664d03;">🗺️ Tóm Tắt Lộ Trình Cho Tân Thủ</h3>
     <div style="background:#fff8e1;border-radius:7px;padding:10px 14px;font-size:13px;">
       <b>1.</b> Đăng ký → nhận gift code tân thủ<br>
-      <b>2.</b> Lên cấp → phân bổ Tiềm Năng vào Máu &amp; Sức Đánh trước<br>
+      <b>2.</b> Lên cấp → phân bổ Điểm Tiềm Năng vào Máu &amp; Sức Đánh trước<br>
       <b>3.</b> Nhận Mốc Nạp để có đồ Thần Linh sớm<br>
-      <b>4.</b> Dùng Thỏi Vàng nâng Thần Linh → Set Kích Hoạt<br>
-      <b>5.</b> Mặc đủ 5 mảnh cùng Set để kích hoạt hiệu ứng<br>
-      <b>6.</b> Nuôi đệ tử và săn 7 viên ngọc rồng
+      <b>4.</b> Dùng Thỏi Vàng để nâng Thần Linh → Set Kích Hoạt (SKH)<br>
+      <b>5.</b> Mặc đủ 5 mảnh cùng Set để kích hoạt hiệu ứng đặc biệt<br>
+      <b>6.</b> Nuôi đệ tử và săn 7 viên ngọc rồng để mạnh thêm
     </div>
   </div>
 </div>
