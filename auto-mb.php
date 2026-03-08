@@ -56,7 +56,7 @@ foreach ((array)$result['TranList'] as $data) {
 
         if ($stmt_check->num_rows == 0) {
             // Tìm user_id từ username
-            $stmt_user = $config->prepare("SELECT `id`, `username` FROM `account` WHERE `username` = ?");
+            $stmt_user = $config->prepare("SELECT `id`, `username` FROM `account` WHERE LOWER(`username`) = ?");
             $stmt_user->bind_param("s", $username);
             $stmt_user->execute();
             $stmt_user->store_result();

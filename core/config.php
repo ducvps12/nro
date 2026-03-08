@@ -2,7 +2,7 @@
 // Hãy tôn trọng bản quyền của tác giả, không nên chỉnh sửa nguồn! ChipDEV 0867893653
 global $config;
 
-$serverName = "180.93.98.64";
+$serverName = "localhost";
 $userName   = "root";
 $password   = "Nro@2026!";
 $dbName     = "nro_root";     // DB mặc định
