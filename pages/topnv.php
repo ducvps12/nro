@@ -79,14 +79,42 @@ $limit = ($limit === 20) ? 20 : 10;
 /* ====== Có cột timestamp hay không ====== */
 $hasTs = hasCol($config, 'player', 'timestamp');
 
-/* ====== Query ====== */
-$sql = "
-SELECT cName, ctaskId".($hasTs ? ", timestamp" : "")."
-FROM `nro_root`.`player`
-ORDER BY CAST(ctaskId AS UNSIGNED) DESC".($hasTs ? ", timestamp ASC" : "")."
-LIMIT {$limit}";
-$data = mysqli_query($config, $sql);
-$err  = ($data === false) ? mysqli_error($config) : null;
+/* ====== Cache 5 phút (file-based) ====== */
+$cacheDir = sys_get_temp_dir() . '/topnv_cache';
+if (!is_dir($cacheDir)) @mkdir($cacheDir, 0755, true);
+$cacheFile = $cacheDir . "/topnv_limit_{$limit}.json";
+$cacheTTL = 300; // 5 phút
+
+$rows = null;
+$err = null;
+
+// Kiểm tra cache còn hạn không
+if (file_exists($cacheFile) && (time() - filemtime($cacheFile)) < $cacheTTL) {
+    $cached = @json_decode(file_get_contents($cacheFile), true);
+    if (is_array($cached)) {
+        $rows = $cached;
+    }
+}
+
+// Nếu không có cache hoặc hết hạn → query DB
+if ($rows === null) {
+    $sql = "
+    SELECT cName, ctaskId".($hasTs ? ", timestamp" : "")."
+    FROM `nro_root`.`player`
+    ORDER BY CAST(ctaskId AS UNSIGNED) DESC".($hasTs ? ", timestamp ASC" : "")."
+    LIMIT {$limit}";
+    $data = mysqli_query($config, $sql);
+    $err  = ($data === false) ? mysqli_error($config) : null;
+
+    if ($data && !$err) {
+        $rows = [];
+        while ($r = mysqli_fetch_assoc($data)) {
+            $rows[] = $r;
+        }
+        // Lưu cache
+        @file_put_contents($cacheFile, json_encode($rows, JSON_UNESCAPED_UNICODE));
+    }
+}
 ?>
 <div class="p-1 mt-1 ibox-content" style="border-radius:7px;">
   <main>
@@ -140,8 +168,8 @@ $err  = ($data === false) ? mysqli_error($config) : null;
         <tbody>
         <?php
         $rank = 1;
-        if ($data && mysqli_num_rows($data) > 0):
-          while ($row = mysqli_fetch_assoc($data)):
+        if (!empty($rows)):
+          foreach ($rows as $row):
             $rawName = trim((string)($row['cName'] ?? ''));
             // Admin + full => show nguyên; còn lại => mask
             $showName = ($detectedIsAdmin === 1 && $adminWantsFull)
@@ -160,7 +188,7 @@ $err  = ($data === false) ? mysqli_error($config) : null;
             </td>
           </tr>
         <?php
-          endwhile;
+          endforeach;
         else:
           echo '<tr><td colspan="3" class="text-center">Chưa có dữ liệu</td></tr>';
         endif;
