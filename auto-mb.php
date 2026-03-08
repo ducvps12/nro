@@ -45,53 +45,59 @@ foreach ((array)$result['TranList'] as $data) {
     if ($amount <= 0) continue;
 
     // Tìm "nap <username>" trong nội dung chuyển khoản
-    // MB Bank hay chèn khoảng trắng vào giữa username (vd: "nap cter20 04" thay vì "nap cter2004")
-    // Bước 1: Tách phần sau "nap " cho đến dấu phân cách (. - , hoặc từ khóa ngân hàng)
-    // Bước 2: Xóa khoảng trắng thừa trong phần đó để ghép lại username đúng
-    if (!preg_match('/nap\s+(.+)/i', $comment, $raw_match)) continue;
-    
-    $raw = $raw_match[1];
-    // Cắt tại dấu phân cách: . - , hoặc các từ khóa ngân hàng
-    $raw = preg_split('/[.\-,]|\b(?:CT\s+tu|Ma\s+(?:GD|giao\s*dich)|TU:|FT\d|CHUYEN\s+TIEN|ACSP|Trace\d|MOMO)\b/i', $raw)[0];
-    // Xóa khoảng trắng thừa rồi lấy phần chữ+số đầu tiên
-    $raw = preg_replace('/\s+/', '', trim($raw));
-    if (!preg_match('/^([a-zA-Z][a-zA-Z0-9_]+)/', $raw, $matches)) continue;
-    
-    $username = strtolower($matches[1]);
+    // Ngân hàng thường tự thêm dấu cách vào giữa username (vd: "cter20 04" thay vì "cter2004")
+    if (preg_match('/nap\s+([a-zA-Z0-9]+(?:\s+[a-zA-Z0-9]+)*?)(?:\.|,|-|CT\s|Ma\s|CHUYEN|TU:|FT\d|\s{2,}|$)/i', $comment, $matches)) {
+        // Thử ghép username bằng cách xóa khoảng trắng (fix lỗi ngân hàng ngắt ký tự)
+        $username_full = strtolower(preg_replace('/\s+/', '', $matches[1]));
+        // Lấy chỉ từ đầu tiên (fallback)
+        preg_match('/(\w+)/', $matches[1], $first_word);
+        $username_short = strtolower($first_word[1]);
 
-    // Kiểm tra xem giao dịch đã tồn tại chưa (tránh cộng trùng)
-    $stmt_check = $config->prepare("SELECT `magd` FROM `money_bank` WHERE `magd` = ?");
-    $stmt_check->bind_param("s", $tranId);
-    $stmt_check->execute();
-    $stmt_check->store_result();
+        // Kiểm tra xem giao dịch đã tồn tại chưa (tránh cộng trùng)
+        $stmt_check = $config->prepare("SELECT `magd` FROM `money_bank` WHERE `magd` = ?");
+        $stmt_check->bind_param("s", $tranId);
+        $stmt_check->execute();
+        $stmt_check->store_result();
 
-    if ($stmt_check->num_rows == 0) {
-        // Tìm user_id từ username
-        $stmt_user = $config->prepare("SELECT `id`, `username` FROM `account` WHERE LOWER(`username`) = ?");
-        $stmt_user->bind_param("s", $username);
-        $stmt_user->execute();
-        $stmt_user->store_result();
+        if ($stmt_check->num_rows == 0) {
+            // Bước 1: Thử tìm username đầy đủ (đã ghép lại)
+            $stmt_user = $config->prepare("SELECT `id`, `username` FROM `account` WHERE LOWER(`username`) = ?");
+            $stmt_user->bind_param("s", $username_full);
+            $stmt_user->execute();
+            $stmt_user->store_result();
 
-        if ($stmt_user->num_rows > 0) {
-            $stmt_user->bind_result($user_id, $username_db);
-            $stmt_user->fetch();
+            // Bước 2: Nếu không tìm thấy, thử với từ đầu tiên
+            if ($stmt_user->num_rows == 0 && $username_full !== $username_short) {
+                $stmt_user->close();
+                $stmt_user = $config->prepare("SELECT `id`, `username` FROM `account` WHERE LOWER(`username`) = ?");
+                $stmt_user->bind_param("s", $username_short);
+                $stmt_user->execute();
+                $stmt_user->store_result();
+                // Cập nhật username để hiển thị đúng
+                $username_full = $username_short;
+            }
 
-            // 1. Lưu giao dịch vào bảng money_bank
-            $stmt_insert = $config->prepare("INSERT INTO `money_bank` (`user_id`, `username`, `amount`, `status`, `magd`) VALUES (?, ?, ?, 'complete', ?)");
-            $stmt_insert->bind_param("isis", $user_id, $username_db, $amount, $tranId);
-            $stmt_insert->execute();
+            if ($stmt_user->num_rows > 0) {
+                $stmt_user->bind_result($user_id, $username_db);
+                $stmt_user->fetch();
 
-            // 2. Cộng tiền vào tài khoản
-            $stmt_update = $config->prepare("UPDATE `account` SET `money` = `money` + ?, `tongnap` = `tongnap` + ? WHERE `id` = ?");
-            $stmt_update->bind_param("iii", $amount, $amount, $user_id);
-            $stmt_update->execute();
+                // 1. Lưu giao dịch vào bảng money_bank
+                $stmt_insert = $config->prepare("INSERT INTO `money_bank` (`user_id`, `username`, `amount`, `status`, `magd`) VALUES (?, ?, ?, 'complete', ?)");
+                $stmt_insert->bind_param("isis", $user_id, $username_db, $amount, $tranId);
+                $stmt_insert->execute();
 
-            echo "[✓] $username_db +$amount VND (cộng tiền thành công)<br>";
+                // 2. Cộng tiền vào tài khoản
+                $stmt_update = $config->prepare("UPDATE `account` SET `money` = `money` + ?, `tongnap` = `tongnap` + ? WHERE `id` = ?");
+                $stmt_update->bind_param("iii", $amount, $amount, $user_id);
+                $stmt_update->execute();
+
+                echo "[✓] $username_db +$amount VND (cộng tiền thành công)<br>";
+            } else {
+                echo "[!] Username '$username_full' không tồn tại<br>";
+            }
         } else {
-            echo "[!] Username '$username' không tồn tại<br>";
+            echo "[=] Giao dịch '$tranId' đã xử lý rồi<br>";
         }
-    } else {
-        echo "[=] Giao dịch '$tranId' đã xử lý rồi<br>";
     }
 }
 ?>
