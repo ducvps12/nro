@@ -45,43 +45,53 @@ foreach ((array)$result['TranList'] as $data) {
     if ($amount <= 0) continue;
 
     // Tìm "nap <username>" trong nội dung chuyển khoản
-    if (preg_match('/nap\s+(\w+)/i', $comment, $matches)) {
-        $username = strtolower($matches[1]);
+    // MB Bank hay chèn khoảng trắng vào giữa username (vd: "nap cter20 04" thay vì "nap cter2004")
+    // Bước 1: Tách phần sau "nap " cho đến dấu phân cách (. - , hoặc từ khóa ngân hàng)
+    // Bước 2: Xóa khoảng trắng thừa trong phần đó để ghép lại username đúng
+    if (!preg_match('/nap\s+(.+)/i', $comment, $raw_match)) continue;
+    
+    $raw = $raw_match[1];
+    // Cắt tại dấu phân cách: . - , hoặc các từ khóa ngân hàng
+    $raw = preg_split('/[.\-,]|\b(?:CT\s+tu|Ma\s+(?:GD|giao\s*dich)|TU:|FT\d|CHUYEN\s+TIEN|ACSP|Trace\d|MOMO)\b/i', $raw)[0];
+    // Xóa khoảng trắng thừa rồi lấy phần chữ+số đầu tiên
+    $raw = preg_replace('/\s+/', '', trim($raw));
+    if (!preg_match('/^([a-zA-Z][a-zA-Z0-9_]+)/', $raw, $matches)) continue;
+    
+    $username = strtolower($matches[1]);
 
-        // Kiểm tra xem giao dịch đã tồn tại chưa (tránh cộng trùng)
-        $stmt_check = $config->prepare("SELECT `magd` FROM `money_bank` WHERE `magd` = ?");
-        $stmt_check->bind_param("s", $tranId);
-        $stmt_check->execute();
-        $stmt_check->store_result();
+    // Kiểm tra xem giao dịch đã tồn tại chưa (tránh cộng trùng)
+    $stmt_check = $config->prepare("SELECT `magd` FROM `money_bank` WHERE `magd` = ?");
+    $stmt_check->bind_param("s", $tranId);
+    $stmt_check->execute();
+    $stmt_check->store_result();
 
-        if ($stmt_check->num_rows == 0) {
-            // Tìm user_id từ username
-            $stmt_user = $config->prepare("SELECT `id`, `username` FROM `account` WHERE LOWER(`username`) = ?");
-            $stmt_user->bind_param("s", $username);
-            $stmt_user->execute();
-            $stmt_user->store_result();
+    if ($stmt_check->num_rows == 0) {
+        // Tìm user_id từ username
+        $stmt_user = $config->prepare("SELECT `id`, `username` FROM `account` WHERE LOWER(`username`) = ?");
+        $stmt_user->bind_param("s", $username);
+        $stmt_user->execute();
+        $stmt_user->store_result();
 
-            if ($stmt_user->num_rows > 0) {
-                $stmt_user->bind_result($user_id, $username_db);
-                $stmt_user->fetch();
+        if ($stmt_user->num_rows > 0) {
+            $stmt_user->bind_result($user_id, $username_db);
+            $stmt_user->fetch();
 
-                // 1. Lưu giao dịch vào bảng money_bank
-                $stmt_insert = $config->prepare("INSERT INTO `money_bank` (`user_id`, `username`, `amount`, `status`, `magd`) VALUES (?, ?, ?, 'complete', ?)");
-                $stmt_insert->bind_param("isis", $user_id, $username_db, $amount, $tranId);
-                $stmt_insert->execute();
+            // 1. Lưu giao dịch vào bảng money_bank
+            $stmt_insert = $config->prepare("INSERT INTO `money_bank` (`user_id`, `username`, `amount`, `status`, `magd`) VALUES (?, ?, ?, 'complete', ?)");
+            $stmt_insert->bind_param("isis", $user_id, $username_db, $amount, $tranId);
+            $stmt_insert->execute();
 
-                // 2. Cộng tiền vào tài khoản
-                $stmt_update = $config->prepare("UPDATE `account` SET `money` = `money` + ?, `tongnap` = `tongnap` + ? WHERE `id` = ?");
-                $stmt_update->bind_param("iii", $amount, $amount, $user_id);
-                $stmt_update->execute();
+            // 2. Cộng tiền vào tài khoản
+            $stmt_update = $config->prepare("UPDATE `account` SET `money` = `money` + ?, `tongnap` = `tongnap` + ? WHERE `id` = ?");
+            $stmt_update->bind_param("iii", $amount, $amount, $user_id);
+            $stmt_update->execute();
 
-                echo "[✓] $username_db +$amount VND (cộng tiền thành công)<br>";
-            } else {
-                echo "[!] Username '$username' không tồn tại<br>";
-            }
+            echo "[✓] $username_db +$amount VND (cộng tiền thành công)<br>";
         } else {
-            echo "[=] Giao dịch '$tranId' đã xử lý rồi<br>";
+            echo "[!] Username '$username' không tồn tại<br>";
         }
+    } else {
+        echo "[=] Giao dịch '$tranId' đã xử lý rồi<br>";
     }
 }
 ?>
